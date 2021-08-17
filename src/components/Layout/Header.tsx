@@ -44,7 +44,8 @@ const Header = () => {
 
 
     return (
-        <Box bg={'#fff'}>
+
+        <Box zIndex={999} pos={'sticky'} top={0} left={0} w={'100%'} bg={'#fff'}>
             <Container maxW={'container.xl'}>
                 <Box height={'80px'} display={'flex'}
                      justifyContent={'space-between'}
@@ -53,7 +54,7 @@ const Header = () => {
 
                     {/* left section of header*/}
                     <HStack spacing={8}>
-                        <Heading fontSize={['30px','32px','36px']}>
+                        <Heading fontSize={['30px', '32px', '36px']}>
                             Learning<Box display={'inline-block'} color={'brand.blue'}>Path</Box>
                         </Heading>
 
@@ -177,7 +178,7 @@ const Header = () => {
                         </Heading>
 
                         <Box mt={'1rem'}>
-                            <InputGroup >
+                            <InputGroup>
                                 <InputLeftElement
                                     pointerEvents="none"
                                     children={
@@ -209,7 +210,6 @@ const Header = () => {
                         </VStack>
 
 
-
                     </DrawerBody>
 
                     <DrawerFooter textAlign={'center'} justifyContent={'center'} borderTopWidth="1px">
@@ -219,6 +219,8 @@ const Header = () => {
             </Drawer>
 
         </Box>
+
+
     );
 };
 

@@ -1,14 +1,12 @@
 import {Box} from '@chakra-ui/react'
 
-import { Container } from '../components/Container'
+import HeroSection from "../components/home/HeroSection";
 
 
 const Index = () => (
-  <Container height="100vh">
-   <Box>
-       Tsest
-   </Box>
-  </Container>
+    <Box>
+        <HeroSection/>
+    </Box>
 )
 
 export default Index
