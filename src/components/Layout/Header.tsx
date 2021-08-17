@@ -53,7 +53,7 @@ const Header = () => {
 
                     {/* left section of header*/}
                     <HStack spacing={8}>
-                        <Heading fontSize={'36px'}>
+                        <Heading fontSize={['30px','32px','36px']}>
                             Learning<Box display={'inline-block'} color={'brand.blue'}>Path</Box>
                         </Heading>
 
