@@ -55,7 +55,7 @@ const Header = () => {
                     {/* left section of header*/}
                     <HStack spacing={8}>
                         <Heading as={'button'} cursor={'pointer'} fontSize={['30px', '32px', '36px']}>
-                            Learning<Box display={'inline-block'} color={'brand.blue'}>Path</Box>
+                            Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
                         </Heading>
 
                         <HStack display={['none', null, null, null, null, 'flex']} pos={'relative'} spacing={2}>
@@ -158,7 +158,7 @@ const Header = () => {
                     <DrawerCloseButton borderRadius={'50%'}/>
                     <DrawerHeader borderBottomWidth="1px">
                         <Heading fontSize={'28px'}>
-                            Learning<Box display={'inline-block'} color={'brand.blue'}>Path</Box>
+                            Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
                         </Heading>
                     </DrawerHeader>
 
