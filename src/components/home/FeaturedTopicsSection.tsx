@@ -9,7 +9,8 @@ const FeaturedTopicsSection = () => {
     return (
         <Box bg={'brand.bgGrey'} py={['2rem', '4rem', '6rem', null, '8rem']}>
             <Container maxW={'container.xl'}>
-                <Box display={'grid'} gridRowGap={'2rem'} placeItems={['center',null,null,'start']} gridTemplateColumns={['1fr', null, null, '1fr auto']}>
+                <Box display={'grid'} gridRowGap={'2rem'} placeItems={['center', null, null, 'start']}
+                     gridTemplateColumns={['1fr', null, null, '1fr auto']}>
                     <HeadingWithLeftIcon>
                         Featured topics by category
                     </HeadingWithLeftIcon>
@@ -22,15 +23,21 @@ const FeaturedTopicsSection = () => {
 
                 </Box>
 
-                <Box mt={'4rem'} gridRowGap={'2rem'} gridColumnGap={'1rem'} display={'grid'} gridTemplateColumns={['1fr',null,'1fr 1fr',null,'1fr 1fr 1fr 1fr']}>
+                <Box mt={'4rem'}
+                     gridRowGap={'2rem'}
+                     gridColumnGap={'1rem'}
+                     display={'grid'}
+                     gridTemplateColumns={['1fr', null, '1fr 1fr', null, '1fr 1fr 1fr 1fr']}
+                     placeItems={['center', null, 'start']}
+                >
 
                     <Box>
 
-                        <BlueHeading>
+                        <BlueHeading textAlign={['center', null, 'left']}>
                             Development
                         </BlueHeading>
 
-                        <VStack mt={'1rem'} alignItems={'flex-start'} spacing={2}>
+                        <VStack mt={'1rem'} alignItems={['center', null, 'flex-start']} spacing={2}>
 
                             <HeadingWithSubHeading/>
                             <HeadingWithSubHeading/>
@@ -46,7 +53,7 @@ const FeaturedTopicsSection = () => {
                             Science
                         </BlueHeading>
 
-                        <VStack mt={'1rem'} alignItems={'flex-start'} spacing={2}>
+                        <VStack alignItems={['center', null, 'flex-start']} mt={'1rem'} spacing={2}>
 
                             <HeadingWithSubHeading/>
                             <HeadingWithSubHeading/>
@@ -62,7 +69,7 @@ const FeaturedTopicsSection = () => {
                             Business
                         </BlueHeading>
 
-                        <VStack mt={'1rem'} alignItems={'flex-start'} spacing={2}>
+                        <VStack alignItems={['center', null, 'flex-start']} mt={'1rem'} spacing={2}>
 
                             <HeadingWithSubHeading/>
                             <HeadingWithSubHeading/>
@@ -78,12 +85,12 @@ const FeaturedTopicsSection = () => {
                             IT & Software
                         </BlueHeading>
 
-                        <VStack mt={'1rem'} alignItems={'flex-start'} spacing={2}>
+                        <VStack alignItems={['center', null, 'flex-start']} mt={'1rem'} spacing={2}>
 
-                        <HeadingWithSubHeading/>
-                        <HeadingWithSubHeading/>
-                        <HeadingWithSubHeading/>
-                        <HeadingWithSubHeading/>
+                            <HeadingWithSubHeading/>
+                            <HeadingWithSubHeading/>
+                            <HeadingWithSubHeading/>
+                            <HeadingWithSubHeading/>
 
                         </VStack>
 

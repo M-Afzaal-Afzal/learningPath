@@ -18,6 +18,14 @@ SwiperCore.use([Navigation]);
 
 const HeadingWithList = () => {
 
+    const prevButtonClickHandler = () => {
+
+    }
+
+    const nextButtonClickHandler = () => {
+
+    }
+
     return (
         <Box>
 
@@ -36,7 +44,7 @@ const HeadingWithList = () => {
                          color={'brand.blue'}
                          as={'button'}
                          p={'.5rem 1rem'}
-
+                         onClick={prevButtonClickHandler}
                     >
                         <FaLongArrowAltLeft
                             size={20}
@@ -50,7 +58,7 @@ const HeadingWithList = () => {
                         color={'brand.blue'}
                         as={'button'}
                         p={'.5rem 1rem'}
-
+                        onClick={nextButtonClickHandler}
                     >
                         <FaLongArrowAltRight
                             size={20}
