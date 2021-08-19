@@ -14,6 +14,11 @@ const OrangeButtonFilled = forwardRef<BoxProps,'button'> (({children,...props}, 
             background={'brand.orange'}
             border={'3px solid'}
             borderColor={'brand.orange'}
+            transition={'all .3s linear'}
+            _hover={{
+                background: '#fd6d32',
+                borderColor: '#fd6d32',
+            }}
             ref={ref}
             {...props}
         >

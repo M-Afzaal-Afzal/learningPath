@@ -16,7 +16,7 @@ const FeaturedTopicsSection = () => {
                     </HeadingWithLeftIcon>
 
                     <Box>
-                        <BlueButtonOutlined bg={'brand.bgGrey'}>
+                        <BlueButtonOutlined bg={'brand.bgGrey'} _hover={{background: '#fff'}}>
                             See All
                         </BlueButtonOutlined>
                     </Box>

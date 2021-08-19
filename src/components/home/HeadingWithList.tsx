@@ -1,10 +1,10 @@
 import React from 'react';
-import {Box, Flex, HStack} from "@chakra-ui/react";
+import {Box, Flex} from "@chakra-ui/react";
 import HeadingWithLeftIcon from "../common/HeadingWithLeftIcon";
-import {FaLongArrowAltRight} from 'react-icons/fa';
-import {FaLongArrowAltLeft} from 'react-icons/fa';
+// import {FaLongArrowAltRight} from 'react-icons/fa';
+// import {FaLongArrowAltLeft} from 'react-icons/fa';
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from './swiper.module.css'
+
 
 import Card from "../common/Card";
 
@@ -18,13 +18,13 @@ SwiperCore.use([Navigation]);
 
 const HeadingWithList = () => {
 
-    const prevButtonClickHandler = () => {
-
-    }
-
-    const nextButtonClickHandler = () => {
-
-    }
+    // const prevButtonClickHandler = () => {
+    //
+    // }
+    //
+    // const nextButtonClickHandler = () => {
+    //
+    // }
 
     return (
         <Box>
@@ -36,55 +36,55 @@ const HeadingWithList = () => {
                 </HeadingWithLeftIcon>
 
                 {/* right navigation icons*/}
-                <HStack justifyContent={'center'}>
+                {/*<HStack justifyContent={'center'}>*/}
 
-                    <Box border={'1px solid'}
-                         borderRadius={'md'}
-                         borderColor={'brand.grey'}
-                         color={'brand.blue'}
-                         as={'button'}
-                         p={'.5rem 1rem'}
-                         onClick={prevButtonClickHandler}
-                    >
-                        <FaLongArrowAltLeft
-                            size={20}
-                        />
-                    </Box>
+                {/*    <Box border={'1px solid'}*/}
+                {/*         borderRadius={'md'}*/}
+                {/*         borderColor={'brand.grey'}*/}
+                {/*         color={'brand.blue'}*/}
+                {/*         as={'button'}*/}
+                {/*         p={'.5rem 1rem'}*/}
+                {/*         onClick={prevButtonClickHandler}*/}
+                {/*    >*/}
+                {/*        <FaLongArrowAltLeft*/}
+                {/*            size={20}*/}
+                {/*        />*/}
+                {/*    </Box>*/}
 
-                    <Box
-                        border={'1px solid'}
-                        borderRadius={'md'}
-                        borderColor={'brand.grey'}
-                        color={'brand.blue'}
-                        as={'button'}
-                        p={'.5rem 1rem'}
-                        onClick={nextButtonClickHandler}
-                    >
-                        <FaLongArrowAltRight
-                            size={20}
-                        />
-                    </Box>
+                {/*    <Box*/}
+                {/*        border={'1px solid'}*/}
+                {/*        borderRadius={'md'}*/}
+                {/*        borderColor={'brand.grey'}*/}
+                {/*        color={'brand.blue'}*/}
+                {/*        as={'button'}*/}
+                {/*        p={'.5rem 1rem'}*/}
+                {/*        onClick={nextButtonClickHandler}*/}
+                {/*    >*/}
+                {/*        <FaLongArrowAltRight*/}
+                {/*            size={20}*/}
+                {/*        />*/}
+                {/*    </Box>*/}
 
-                </HStack>
+                {/*</HStack>*/}
 
             </Box>
 
             {/* Carousel*/}
-            <Swiper slidesPerView={'auto'}
+            <Swiper id="swiper-color" slidesPerView={'auto'}
                     spaceBetween={20}
                     navigation={true}
-                    className={styles.swiperContainer}
+                    className={'swiperContainer'}
             >
-                <SwiperSlide className={styles.swiperSlide}>
+                <SwiperSlide className={'swiperSlide'}>
                    <Card/>
                 </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
+                <SwiperSlide className={'swiperSlide'}>
                     <Card/>
                 </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
+                <SwiperSlide className={'swiperSlide'}>
                     <Card/>
                 </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlide}>
+                <SwiperSlide className={'swiperSlide'}>
                     <Card/>
                 </SwiperSlide>
             </Swiper>

@@ -18,6 +18,10 @@ const BlueButtonOutlined = forwardRef<BoxProps,'button'> (({children,...props}, 
             background={'white'}
             border={'3px solid'}
             borderColor={'brand.blue'}
+            transition={'all .3s linear'}
+            _hover={{
+                background: 'brand.bgGrey',
+            }}
             ref={ref}
             {...props}
         >

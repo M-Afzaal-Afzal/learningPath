@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, Container, Heading, HStack, IconButton, Text} from "@chakra-ui/react";
+import {Box, Container, Heading, HStack, IconButton} from "@chakra-ui/react";
+import TextButton from "../buttons/textButton";
 
 const Footer = () => {
     return (
@@ -42,17 +43,17 @@ const Footer = () => {
 
                     <HStack spacing={12}>
 
-                        <Text cursor={'pointer'} color={'#fff'}>
+                        <TextButton cursor={'pointer'} color={'#fff'}>
                             Help
-                        </Text>
+                        </TextButton>
 
-                        <Text cursor={'pointer'} color={'#fff'}>
+                        <TextButton cursor={'pointer'} color={'#fff'}>
                             Privacy
-                        </Text>
+                        </TextButton>
 
-                        <Text cursor={'pointer'} color={'#fff'}>
+                        <TextButton cursor={'pointer'} color={'#fff'}>
                             Terms
-                        </Text>
+                        </TextButton>
 
                     </HStack>
 

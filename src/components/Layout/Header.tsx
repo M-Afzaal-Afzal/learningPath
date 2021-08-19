@@ -60,11 +60,14 @@ const Header = () => {
 
                         <HStack display={['none', null, null, null, null, 'flex']} pos={'relative'} spacing={2}>
 
-                            <Text fontWeight={'bold'} fontSize={'20px'}>
-                                Categories
-                            </Text>
+                            <HStack cursor={'pointer'} onClick={toggleShowCategories}>
 
-                            <FaAngleDown onClick={toggleShowCategories} size={20}/>
+                                <Text fontWeight={'bold'} fontSize={'20px'}>
+                                    Categories
+                                </Text>
+
+                                <FaAngleDown size={20}/>
+                            </HStack>
 
                             <VStack
                                 opacity={isCategoriesShow ? 1 : 0}

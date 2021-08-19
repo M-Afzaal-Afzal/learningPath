@@ -6,6 +6,8 @@ import Header from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
+import '../styles/gloabal.css'
+import '../styles/swiper.css'
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
