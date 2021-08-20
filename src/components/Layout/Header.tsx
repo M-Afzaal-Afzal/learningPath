@@ -23,6 +23,7 @@ import {FaAngleDown, FaBars} from 'react-icons/fa';
 import Image from 'next/image'
 import BlueButtonFilled from "../buttons/blueButtonFilled";
 import BlueButtonOutlined from "../buttons/blueButtonOutlined";
+import Link from 'next/link';
 
 const Header = () => {
 
@@ -45,7 +46,8 @@ const Header = () => {
 
     return (
 
-        <Box zIndex={999} pos={'sticky'} top={0} left={0} w={'100%'} bg={'#fff'}>
+        <Box zIndex={999} boxShadow={'rgba(149, 157, 165, 0.2) 0px 8px 24px;'} pos={'sticky'} top={0} left={0}
+             w={'100%'} bg={'#fff'}>
             <Container maxW={'container.xl'}>
                 <Box height={'80px'} display={'flex'}
                      justifyContent={'space-between'}
@@ -54,13 +56,15 @@ const Header = () => {
 
                     {/* left section of header*/}
                     <HStack spacing={8}>
-                        <Heading as={'button'} cursor={'pointer'} fontSize={['30px', '32px', '36px']}>
-                            Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
-                        </Heading>
+                        <Link href={'/'}>
+                            <Heading as={'button'} cursor={'pointer'} fontSize={['30px', '32px', '36px']}>
+                                Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
+                            </Heading>
+                        </Link>
 
                         <HStack display={['none', null, null, null, null, 'flex']} pos={'relative'} spacing={2}>
 
-                            <HStack cursor={'pointer'} onClick={toggleShowCategories}>
+                            <HStack as={'button'} cursor={'pointer'} onClick={toggleShowCategories}>
 
                                 <Text fontWeight={'bold'} fontSize={'20px'}>
                                     Categories
@@ -121,14 +125,19 @@ const Header = () => {
                     {/* Right section of header*/}
                     <HStack spacing={6} justifyContent={'flex-end'}>
                         <Box display={['none', null, null, null, null, 'flex']}>
-                            <BlueButtonOutlined>
-                                Log In
-                            </BlueButtonOutlined>
+                            <Link href={'/login'}>
+                                <BlueButtonOutlined>
+                                    Log In
+                                </BlueButtonOutlined>
+                            </Link>
                         </Box>
+
                         <Box display={['none', null, null, null, null, 'flex']}>
-                            <BlueButtonFilled>
-                                Sign Up
-                            </BlueButtonFilled>
+                            <Link href={'/signup'}>
+                                <BlueButtonFilled>
+                                    Sign Up
+                                </BlueButtonFilled>
+                            </Link>
                         </Box>
 
                         <Box display={['block', null, null, null, null, 'none']}>
@@ -160,20 +169,32 @@ const Header = () => {
                 <DrawerContent>
                     <DrawerCloseButton borderRadius={'50%'}/>
                     <DrawerHeader borderBottomWidth="1px">
-                        <Heading fontSize={'28px'}>
-                            Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
-                        </Heading>
+                        <Link href={'/'}>
+                            <Box onClick={onClose}>
+                                <Heading fontSize={'28px'}>
+                                    Brain<Box display={'inline-block'} color={'brand.blue'}>Drip</Box>
+                                </Heading>
+                            </Box>
+                        </Link>
                     </DrawerHeader>
 
                     <DrawerBody>
 
                         <VStack my={'1rem'}>
-                            <BlueButtonFilled w={'100%'}>
-                                Sign Up
-                            </BlueButtonFilled>
-                            <BlueButtonOutlined w={'100%'}>
-                                Log In
-                            </BlueButtonOutlined>
+                            <Link href={'/signup'}>
+                                <Box w={'100%'} onClick={onClose}>
+                                    <BlueButtonFilled w={'100%'}>
+                                        Sign Up
+                                    </BlueButtonFilled>
+                                </Box>
+                            </Link>
+                            <Link href={'/login'}>
+                                <Box w={'100%'} onClick={onClose}>
+                                    <BlueButtonOutlined w={'100%'}>
+                                        Log In
+                                    </BlueButtonOutlined>
+                                </Box>
+                            </Link>
                         </VStack>
 
                         <Heading mt={'1.5rem'} fontSize={'1.5rem'}>

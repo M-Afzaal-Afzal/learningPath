@@ -5,7 +5,7 @@ import OrangeButtonFilled from "../buttons/orangeButtonFilled";
 
 const HeroSection = () => {
     return (
-        <Box minH={'100vh'} bg={'brand.bgGrey'}>
+        <Box bg={'brand.bgGrey'}>
             <Container maxW={'container.xl'}>
 
                 <Box pt={'2rem'} placeItems={'center'} display={'grid'} gridTemplateColumns={['1fr',null,null,null,'1fr 1fr']}>
