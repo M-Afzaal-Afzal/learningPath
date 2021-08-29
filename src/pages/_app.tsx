@@ -8,6 +8,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
 import '../styles/gloabal.css'
 import '../styles/swiper.css'
+import 'rc-rate/assets/index.css';
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
