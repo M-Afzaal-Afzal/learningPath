@@ -4,9 +4,11 @@ import {FiAward, FiBookOpen, FiLogOut, FiSettings, FiUser} from "react-icons/fi"
 
 interface ISidebar {
     isMobileNav?: boolean;
+    activeLink?: Number;
+    activeLinkToggler?: (index) => void;
 }
 
-const Sidebar: React.FC<ISidebar> = ({isMobileNav}) => {
+const Sidebar: React.FC<ISidebar> = ({isMobileNav, activeLink, activeLinkToggler}) => {
 
     const links = [
         {
@@ -44,8 +46,17 @@ const Sidebar: React.FC<ISidebar> = ({isMobileNav}) => {
                 <VStack spacing={10} alignItems={'flex-start'}>
                     {
                         links.map((link, index) => (
-                            <Box fontWeight={index === 0 && 'bold'} as={'button'} cursor={'pointer'}
-                                 key={link.id} display={'flex'} alignItems={'center'} fontSize={'20px'}>
+                            <Box onClick={() => {
+                                activeLinkToggler(index)
+                            }} fontWeight={activeLink === index && 'bold'} as={'button'} cursor={'pointer'}
+                                 key={link.id}
+                                 display={'grid'}
+                                 alignItems={'center'}
+                                 gridTemplateColumns={'auto 1fr'}
+                                 fontSize={'20px'}
+                                 w={'13rem'}
+                                 justifyItems={'start'}
+                            >
                                 {link.icon}
                                 {link.text}
                             </Box>
