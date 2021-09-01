@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Heading} from "@chakra-ui/react";
 import BlueButtonFilled from "../buttons/blueButtonFilled";
 import {FiPlus} from 'react-icons/fi';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 import LearningPathCard from "./LearningPathCard";
 
@@ -17,7 +18,7 @@ const LearningPathsPage = () => {
                 <Heading fontSize={'36px'} fontWeight={'bold'}>
                     My Learning Paths
                 </Heading>
-                <Box display={'flex'} justifyContent={'flex-end'} py={['1rem',null,null,'0']}>
+                <Box display={'flex'} justifyContent={'flex-end'} py={['1rem', null, null, '0']}>
                     <BlueButtonFilled display={'flex'} justifyContent={'center'} alignItems={'center'}>
                         Create New <FiPlus style={{marginLeft: '.5rem'}} size={'20'}/>
                     </BlueButtonFilled>
@@ -25,21 +26,22 @@ const LearningPathsPage = () => {
             </Box>
 
             {/* Learning cards container*/}
-            <Box display={'grid'}
-                 placeItems={'center'}
-                 gridGap={'1rem'}
-                 py={'1.5rem'}
-                 gridTemplateColumns={['1fr', null, null, '1fr 1fr', '1fr 1fr 1fr', '1fr']}
-            >
-
-                <LearningPathCard/>
-                <LearningPathCard/>
-                <LearningPathCard/>
-                <LearningPathCard/>
-                <LearningPathCard/>
-                <LearningPathCard/>
-
+            <Box py={'1rem'}>
+                <ResponsiveMasonry
+                    columnsCountBreakPoints={{350: 1, 750: 2, 900: 3, 1200: 1}}
+                >
+                    <Masonry gutter={'1rem'}>
+                        <LearningPathCard/>
+                        <LearningPathCard/>
+                        <LearningPathCard/>
+                        <LearningPathCard/>
+                        <LearningPathCard/>
+                        <LearningPathCard/>
+                    </Masonry>
+                </ResponsiveMasonry>
             </Box>
+
+            {/*</Box>*/}
 
         </Box>
     );
