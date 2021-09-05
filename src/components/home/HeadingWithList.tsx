@@ -18,14 +18,6 @@ SwiperCore.use([Navigation]);
 
 const HeadingWithList = () => {
 
-    // const prevButtonClickHandler = () => {
-    //
-    // }
-    //
-    // const nextButtonClickHandler = () => {
-    //
-    // }
-
     return (
         <Box>
 

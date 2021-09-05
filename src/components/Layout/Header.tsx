@@ -24,11 +24,34 @@ import Image from 'next/image'
 import BlueButtonFilled from "../buttons/blueButtonFilled";
 import BlueButtonOutlined from "../buttons/blueButtonOutlined";
 import Link from 'next/link';
+import {useRouter} from "next/router";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    // ModalHeader,
+    // ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+} from "@chakra-ui/react";
+import Login from "../login/Login";
+import Signup from "../signup/Signup";
 
 const Header = () => {
 
-    //drawer handler
+    const router = useRouter();
+
+    const isHomePage = router.pathname === '/';
+
+    //drawer handler for navigation
     const {isOpen, onOpen, onClose} = useDisclosure()
+
+    // modal handler for login
+    const { isOpen: isLoginModalOpen, onOpen: onLoginModalOpen, onClose: OnLoginModalClose } = useDisclosure()
+
+    // modal handler for signup
+    const { isOpen: isSignupModalOpen, onOpen: onSignupModalOpen, onClose: OnSignupModalClose } = useDisclosure()
+
 
     const [isCategoriesShow, setIsCategoriesShown] = useState<Boolean>(false);
 
@@ -42,7 +65,6 @@ const Header = () => {
         console.log(category);
         setIsCategoriesShown(false);
     }
-
 
     return (
 
@@ -104,40 +126,42 @@ const Header = () => {
                     </HStack>
 
                     {/* central section of header*/}
-                    <HStack display={['none', null, null, 'flex']} alignItems={'center'}
-                            justifyContent={'center'}>
-                        <InputGroup minW={['auto', null, '20rem', null, '25rem']}>
-                            <InputLeftElement
-                                pointerEvents="none"
-                                children={
-                                    <Image
-                                        width={19}
-                                        height={19}
-                                        layout={'intrinsic'}
-                                        src={'/icons/searchIcon.svg'}
-                                    />
-                                }
-                            />
-                            <Input type="text" placeholder="Search what you want to learn"/>
-                        </InputGroup>
-                    </HStack>
+                    {!isHomePage && (
+                        <HStack display={['none', null, null, 'flex']} alignItems={'center'}
+                                justifyContent={'center'}>
+                            <InputGroup minW={['auto', null, '20rem', null, '25rem']}>
+                                <InputLeftElement
+                                    pointerEvents="none"
+                                    children={
+                                        <Image
+                                            width={19}
+                                            height={19}
+                                            layout={'intrinsic'}
+                                            src={'/icons/searchIcon.svg'}
+                                        />
+                                    }
+                                />
+                                <Input type="text" placeholder="Search what you want to learn"/>
+                            </InputGroup>
+                        </HStack>
+                    )}
 
                     {/* Right section of header*/}
                     <HStack spacing={6} justifyContent={'flex-end'}>
                         <Box display={['none', null, null, null, null, 'flex']}>
-                            <Link href={'/login'}>
-                                <BlueButtonOutlined>
+                            {/*<Link href={'/login'}>*/}
+                                <BlueButtonOutlined onClick={onLoginModalOpen}>
                                     Log In
                                 </BlueButtonOutlined>
-                            </Link>
+                            {/*</Link>*/}
                         </Box>
 
                         <Box display={['none', null, null, null, null, 'flex']}>
-                            <Link href={'/signup'}>
-                                <BlueButtonFilled>
+                            {/*<Link href={'/signup'}>*/}
+                                <BlueButtonFilled onClick={onSignupModalOpen}>
                                     Sign Up
                                 </BlueButtonFilled>
-                            </Link>
+                            {/*</Link>*/}
                         </Box>
 
                         <Box display={['block', null, null, null, null, 'none']}>
@@ -241,6 +265,45 @@ const Header = () => {
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
+
+        {/*     Signup Modal*/}
+            <Modal
+                // scrollBehavior={'inside'}
+                // isCentered
+                   // blockScrollOnMount={false}
+                   isOpen={isSignupModalOpen}
+                   onClose={OnSignupModalClose}
+            >
+                <ModalOverlay />
+                <ModalContent>
+                    {/*<ModalHeader>Modal Title</ModalHeader>*/}
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <Signup/>
+                    </ModalBody>
+
+                </ModalContent>
+            </Modal>
+
+        {/*    Login Modal*/}
+
+            <Modal
+                // scrollBehavior={'inside'}
+                // isCentered
+                // blockScrollOnMount={false}
+                isOpen={isLoginModalOpen}
+                onClose={OnLoginModalClose}
+            >
+                <ModalOverlay />
+                <ModalContent >
+                    {/*<ModalHeader>Modal Title</ModalHeader>*/}
+                    <ModalCloseButton />
+                    <ModalBody>
+                      <Login/>
+                    </ModalBody>
+
+                </ModalContent>
+            </Modal>
 
         </Box>
 

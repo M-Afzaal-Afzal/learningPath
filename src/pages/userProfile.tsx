@@ -11,7 +11,7 @@ import {
     useDisclosure,
 } from "@chakra-ui/react";
 
-import {FaBars} from "react-icons/fa";
+import {FiMoreHorizontal} from "react-icons/fi";
 import SideBar from "../components/userProfile/Sidebar";
 import ProfilePage from "../components/userProfile/ProfilePage";
 import LearningPathsPage from "../components/userProfile/LearningPathsPage";
@@ -67,7 +67,7 @@ const UserProfile = () => {
                                 style={{display: 'flex', marginLeft: 'auto'}}
                                 aria-label={'button'}
                     >
-                        <FaBars/>
+                        <FiMoreHorizontal/>
                     </IconButton>
 
                 </Box>

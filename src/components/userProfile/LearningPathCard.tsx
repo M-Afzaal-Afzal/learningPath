@@ -6,7 +6,7 @@ import HeadingWithValue from "./HeadingWithValue";
 import BlueButtonOutlined from "../buttons/blueButtonOutlined";
 import {LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import {FaAngleDown} from "react-icons/fa";
-
+import {FiChevronUp} from 'react-icons/fi';
 
 const impressionsData = [
     {
@@ -100,7 +100,7 @@ const clicksData = [
 
 const LearningPathCard = () => {
 
-    const {isOpen: isStatisticsShow, onToggle: statisticsShowToggler} = useDisclosure()
+    const {isOpen: isStatisticsShow, onToggle: statisticsShowToggler} = useDisclosure();
 
     const [isSortOptionShow, setIsSortOptionShow] = useState<Boolean>(false);
 
@@ -143,7 +143,6 @@ const LearningPathCard = () => {
                 boxShadow={'0px 12px 24px 0px rgba(0, 0, 0, 0.08)'}
                 borderRadius={'lg'}
             >
-
 
                 <HeadingWithValue heading={'Name'} value={'UI/UX Design'}/>
 
@@ -191,7 +190,6 @@ const LearningPathCard = () => {
 
             {/*    statistic Details*/}
 
-
             <Box gridColumn={'1/-1'}>
 
                 <Collapse in={isStatisticsShow} animateOpacity>
@@ -228,7 +226,7 @@ const LearningPathCard = () => {
                                     // transform={isCategoriesShow ? 'scale(1)' : 'scale(0)'}
                                     transition={'all .3s linear'}
                                     top={'3rem'}
-                                    left={'30%'}
+                                    right={'0'}
                                     pos={'absolute'}
                                     width={'15rem'}
                                     padding={'1rem'}
@@ -303,11 +301,13 @@ const LearningPathCard = () => {
                         </Box>
 
                     </Box>
+                    <Button onClick={statisticsShowToggler} borderRadius={0} w={'100%'} display={'flex'} justifyContent={'center'} p={'1rem'}>
+                        <FiChevronUp color={'#25CED1'} size={25}/>
+                    </Button>
 
                 </Collapse>
 
             </Box>
-
 
         </Box>
     );
