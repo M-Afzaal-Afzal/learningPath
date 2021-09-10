@@ -40,10 +40,13 @@
     width: 360px;
     transition: all .3s linear;
     border-radius: 4px;
+    backface-visibility: hidden;
+    line-height: 1.78;
 }
 
 .swiperSlide:hover {
     transform: scale(1.025);
+    backface-visibility: hidden;
 }
 
 #swiper-color .swiper-button-next {

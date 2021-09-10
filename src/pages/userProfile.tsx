@@ -15,6 +15,7 @@ import {FiMoreHorizontal} from "react-icons/fi";
 import SideBar from "../components/userProfile/Sidebar";
 import ProfilePage from "../components/userProfile/ProfilePage";
 import LearningPathsPage from "../components/userProfile/LearningPathsPage";
+import CreateLearningPathPage from "../components/userProfile/CreateLearningPathPage";
 
 const UserProfile = () => {
 
@@ -24,7 +25,13 @@ const UserProfile = () => {
 
     const {isOpen, onOpen, onClose} = useDisclosure();
 
+    const [isCreatingLearningPath,setIsCreatingLearningPath] = useState<boolean>(false);
+
     const [activeLink, setActiveLink] = useState<number>(0);
+
+    const learningPathPageToggler = () => {
+        setIsCreatingLearningPath((prevState => !prevState))
+    }
 
     const activeLinkToggler = (index) => {
         localStorage.setItem('userProfileActiveLink',JSON.stringify(index));
@@ -48,8 +55,14 @@ const UserProfile = () => {
                 }
 
                 {
-                    activeLink === 1 && (
-                        <LearningPathsPage/>
+                    activeLink === 1 && !isCreatingLearningPath && (
+                        <LearningPathsPage learningPathPageToggler={learningPathPageToggler}/>
+                    )
+                }
+
+                {
+                    activeLink === 1 && isCreatingLearningPath && (
+                        <CreateLearningPathPage learningPathPageToggler={learningPathPageToggler}/>
                     )
                 }
 

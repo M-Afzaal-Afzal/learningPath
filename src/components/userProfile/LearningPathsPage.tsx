@@ -6,7 +6,11 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 import LearningPathCard from "./LearningPathCard";
 
-const LearningPathsPage = () => {
+interface ILearningPathPageProps {
+    learningPathPageToggler: () => void;
+}
+
+const LearningPathsPage: React.FC<ILearningPathPageProps> = ({learningPathPageToggler}) => {
     return (
         <Box gridColumn={['1/-1', null, null, null, null, '2/-1']}
              bg={'#fff'}
@@ -19,7 +23,7 @@ const LearningPathsPage = () => {
                     My Learning Paths
                 </Heading>
                 <Box display={'flex'} justifyContent={'flex-end'} py={['1rem', null, null, '0']}>
-                    <BlueButtonFilled display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                    <BlueButtonFilled onClick={learningPathPageToggler} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                         Create New <FiPlus style={{marginLeft: '.5rem'}} size={'20'}/>
                     </BlueButtonFilled>
                 </Box>
