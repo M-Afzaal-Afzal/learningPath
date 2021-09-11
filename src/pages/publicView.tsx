@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar, Box, Container, useDisclosure} from "@chakra-ui/react";
+import {Avatar, Box, Container, IconButton, useDisclosure} from "@chakra-ui/react";
 
 import CourseCard from "../components/publicView/CourseCard";
 import {
@@ -34,14 +34,19 @@ const PublicView = () => {
                         top={'100px'}
                         right={'20px'}
                         borderRadius={'50%'}
-                        border={'2px solid grey'}
+                        // border={'2px solid grey'}
                         cursor={'pointer'}
                         transition={'all .3s linear'}
-                        _hover={{
-                            border:'2px solid #eee',
-                        }}
+                        // _hover={{
+                        //     border:'2px solid #eee',
+                        // }}
                     >
-                        <Avatar size={'sm'} onClick={onOpen} src={'https://bit.ly/dan-abramov'}/>
+                        <IconButton isRound={true} onClick={onOpen}
+                                    style={{display: 'flex', marginLeft: 'auto'}}
+                                    aria-label={'button'}
+                        >
+                            <Avatar size={'sm'} onClick={onOpen} src={'https://bit.ly/dan-abramov'}/>
+                        </IconButton>
                     </Box>
 
                     {/* Side bar*/}
